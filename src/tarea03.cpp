@@ -50,6 +50,7 @@ int main(){
     pid_t a = fork();               //fork
     signal(SIGTSTP, controlador);   //Recibir ^z
     signal(SIGINT, controlador);    //Recibir ^c
+    signal(SIGQUIT, controlador);   //recibir ^/
     if(a > 0){                      //Proceso padre 
         fibonacci();                //Llamar función.
     }
